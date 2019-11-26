@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jozzey/sp-list-extractor"
+    "url": "https://github.com/Jozzey/WECT-PoC"
   },
   "dependencies": {
     "q": "^1.5.1",

@@ -4,7 +4,7 @@ A Proof of Concept to try and use data from a SharePoint list to drive an applic
 This application uses "Application Permissions" as opposed to "Delegated Permissions" in Azure AD.
 
 ## Configure and run the app
-1. Open **config.js** in the root directory.
+1. Create the file **config.js** in the root directory using **config.js.example** as a template.
 2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
 3. Replace *ENTER_YOUR_SECRET* with a key generated on the **Configure** page of your app in the Microsoft Azure Management Portal.
 4. Replace *ENTER_YOUR_TOKEN_ISSUING_ENDPOINT* with the *OAuth 2.0 token endpoint* value found by clicking the **View Endpoints** button in the Azure Management Portal.

@@ -1,5 +1,5 @@
-# sp-list-extractor
-Extracts data from a SharePoint list using the Graph API and saves the data as a json file.
+# WECT-PoC
+A Proof of Concept to try and use data from a SharePoint list to drive an application.
 
 This application uses "Application Permissions" as opposed to "Delegated Permissions" in Azure AD.
 

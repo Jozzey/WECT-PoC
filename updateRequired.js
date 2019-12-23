@@ -1,14 +1,19 @@
-const request = require('request');
 const Q = require('q');
 const config = require('./config');
+const fs = require('fs');
+const file = `${config.filePath}${config.fileName}`;
 
-// The graph module object.
-var graph = {};
 
-// @name getData
-// @desc Makes a request to the Microsoft Graph for all the data in the specified list.
-graph.getData = function (token) {
+// The updateRequired module object.
+var updateRequired = {};
+
+// @name checkData
+// @desc Checks a series of conditions to see if the data requires updating. Returns true if it does.
+updateRequired.checkData = function () {
   var deferred = Q.defer();
+
+  // Get the date last modified of the file.
+  const {mtime} = fs.statSync(file);
 
   // Make a request to get  data from the list. Limited to a maximum of 1000 items
   // without &$top=1000 server-driven paging restricts the output to 200 items.
@@ -33,4 +38,4 @@ graph.getData = function (token) {
 };
 
 
-module.exports = graph;
+module.exports = updateRequired;

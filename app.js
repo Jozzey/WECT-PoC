@@ -1,6 +1,7 @@
 const auth = require('./auth');
 const graph = require('./graph');
 const fs = require('fs');
+const config = require('./config');
 
 // Get an access token for the app.
 auth.getAccessToken().then(function (token) {
@@ -8,7 +9,7 @@ auth.getAccessToken().then(function (token) {
   graph.getData(token)
     .then(function (data) {
       // Write the list data to a file
-      fs.writeFile('data.json', JSON.stringify(data), function (err) {
+      fs.writeFile(`${config.filePath}${config.fileName}`, JSON.stringify(data), function (err) {
         if (err) throw err;
         console.log('Data saved!');
       });

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const config = require('./config');
+const {fileLife} = require('./config');
 
 // The updateRequired module object.
 var updateRequired = {};
@@ -13,7 +13,7 @@ updateRequired.checkData = function (file) {
         const fileAgeSecs = (Date.now() - mtime.valueOf())/1000;
         console.log(`File data last modified: ${mtime}`);
         console.log(`File age in seconds: ${fileAgeSecs}`);
-        if (fileAgeSecs > config.fileLife) return true;
+        if (fileAgeSecs > fileLife) return true;
     } catch(err) {
         console.error('Its knackered ' + err);
         return true;

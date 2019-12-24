@@ -1,6 +1,6 @@
 const request = require('request');
 const Q = require('q');
-const config = require('./config');
+const {siteId, listId} = require('./config');
 
 // The graph module object.
 var graph = {};
@@ -12,7 +12,7 @@ graph.getData = function (token) {
 
   // Make a request to get  data from the list. Limited to a maximum of 1000 items
   // without &$top=1000 server-driven paging restricts the output to 200 items.
-  request.get(`https://graph.microsoft.com/v1.0/sites/${config.siteId}/lists/${config.listId}/items?expand=fields&$top=1000`, {
+  request.get(`https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${listId}/items?expand=fields&$top=1000`, {
     auth: {
       bearer: token
     }

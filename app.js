@@ -2,9 +2,9 @@ const auth = require('./auth');
 const graph = require('./graph');
 const updateRequired = require('./updateRequired');
 const fs = require('fs');
-const config = require('./config');
+const {filePath, fileName} = require('./config');
 
-const file = `${config.filePath}${config.fileName}`;
+const file = filePath+fileName;
 
 // Check to see if the file needs to be updated
 if (updateRequired.checkData(file)) {

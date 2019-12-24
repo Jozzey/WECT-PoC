@@ -1,13 +1,12 @@
 const fs = require('fs');
 const config = require('./config');
-const file = `${config.filePath}${config.fileName}`;
 
 // The updateRequired module object.
 var updateRequired = {};
 
 // @name checkData
-// @desc Returns true if the file is older than the fileLife variable in config.js or if the files doesn't exist (there is an error)
-updateRequired.checkData = function () {
+// @desc Returns true if the file is older than the fileLife variable in config.js or if the file doesn't exist (there is an error)
+updateRequired.checkData = function (file) {
 
     try {
         const {mtime} = fs.statSync(file); // Get file modified date
@@ -16,7 +15,7 @@ updateRequired.checkData = function () {
         console.log(`File age in seconds: ${fileAgeSecs}`);
         if (fileAgeSecs > config.fileLife) return true;
     } catch(err) {
-        console.log('Its knackered ' + err);
+        console.error('Its knackered ' + err);
         return true;
     }
 }

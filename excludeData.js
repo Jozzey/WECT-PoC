@@ -1,5 +1,5 @@
 module.exports = [
-    'wasteCode',
+    'Title',
     'wasteKey',
     'wasteName',
     'Attachments'

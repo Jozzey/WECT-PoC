@@ -51,7 +51,7 @@ graph.getColData = function (token) {
     } else if (parsedBody.error) {
       deferred.reject(parsedBody.error.message);
     } else {
-      // The value of the body will be an array of the list data.
+      // The value of the body will be an array of the column data.
       deferred.resolve(parsedBody.value);
     }
   });

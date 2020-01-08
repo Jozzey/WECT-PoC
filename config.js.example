@@ -4,5 +4,8 @@ module.exports = {
   clientSecret: 'ENTER_YOUR_SECRET',
   tokenEndpoint: 'ENTER_YOUR_TOKEN_ISSUING_ENDPOINT',
   siteId: 'ENTER_YOUR_SITE_ID',
-  listId: 'ENTER_YOUR_LIST_ID'
+  listId: 'ENTER_YOUR_LIST_ID',
+  filePath: './', // Location where the json will be saved e.g. './data/'
+  fileName: 'data.json',
+  fileLife: 10 // Age in seconds of data file before it can be updated
 };

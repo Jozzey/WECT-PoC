@@ -15,7 +15,7 @@ updateRequired.checkData = function (file) {
         console.log(`File age in seconds: ${fileAgeSecs}`);
         if (fileAgeSecs > fileLife) return true;
     } catch(err) {
-        console.error('Its knackered ' + err);
+        console.error('Unable to load existing data so it will be retrieved again - ' + err);
         return true;
     }
 }

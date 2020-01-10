@@ -29,7 +29,7 @@ if (updateRequired.checkData(file)) {
         for (let i = data.length; i--;) {
           if (data[i].readOnly === true || data[i].columnGroup !== 'Custom Columns' || excludeData.includes(data[i].name)) data.splice(i, 1)
         }
-        // Write the list data to a file
+        // Write the column data to a file
         fs.writeFile(`${filePath}col_${fileName}`, JSON.stringify(data), function (err) {
           if (err) throw err
           console.log('Column data saved!')

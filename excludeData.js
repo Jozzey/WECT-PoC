@@ -1,6 +1,6 @@
 module.exports = [
-    'Title',
-    'wasteKey',
-    'wasteName',
-    'Attachments'
-];
+  'Title',
+  'wasteKey',
+  'wasteName',
+  'Attachments'
+]

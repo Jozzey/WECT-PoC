@@ -2,7 +2,7 @@ const fs = require('fs')
 const { fileLife } = require('./config')
 
 // The updateRequired module object.
-var updateRequired = {}
+const updateRequired = {}
 
 // @name checkData
 // @desc Returns true if the file is older than the fileLife variable in config.js or if the file doesn't exist (there is an error)

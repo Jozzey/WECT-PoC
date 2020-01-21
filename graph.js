@@ -3,12 +3,12 @@ const Q = require('q')
 const { siteId, listId } = require('./config')
 
 // The graph module object.
-var graph = {}
+const graph = {}
 
 // @name getData
 // @desc Makes a request to the Microsoft Graph for all the data in the specified list.
 graph.getData = function (token) {
-  var deferred = Q.defer()
+  const deferred = Q.defer()
 
   // Make a request to get data from the list. Limited to a maximum of 1000 items
   // without &$top=1000 server-driven paging restricts the output to 200 items.
@@ -17,7 +17,7 @@ graph.getData = function (token) {
       bearer: token
     }
   }, function (err, response, body) {
-    var parsedBody = JSON.parse(body)
+    const parsedBody = JSON.parse(body)
 
     if (err) {
       deferred.reject(err)
@@ -35,7 +35,7 @@ graph.getData = function (token) {
 // @name getColData
 // @desc Makes a request to the Microsoft Graph for a filtered set of the lists column data.
 graph.getColData = function (token) {
-  var deferred = Q.defer()
+  const deferred = Q.defer()
 
   // Make a request to get column data from the list.
   request.get(`https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${listId}/columns?$select=columnGroup,displayName,name,readOnly`, {
@@ -43,7 +43,7 @@ graph.getColData = function (token) {
       bearer: token
     }
   }, function (err, response, body) {
-    var parsedBody = JSON.parse(body)
+    const parsedBody = JSON.parse(body)
 
     if (err) {
       deferred.reject(err)

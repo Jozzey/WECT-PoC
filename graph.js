@@ -16,7 +16,7 @@ graph.getData = function (token) {
     auth: {
       bearer: token
     }
-  }, function (err, response, body) {
+  }, (err, response, body) => {
     const parsedBody = JSON.parse(body)
 
     if (err) {
@@ -42,7 +42,7 @@ graph.getColData = function (token) {
     auth: {
       bearer: token
     }
-  }, function (err, response, body) {
+  }, (err, response, body) => {
     const parsedBody = JSON.parse(body)
 
     if (err) {

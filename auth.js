@@ -20,7 +20,7 @@ auth.getAccessToken = function () {
   }
 
   // Make a request to the token issuing endpoint.
-  request.post({ url: tokenEndpoint, form: requestParams }, function (err, response, body) {
+  request.post({ url: tokenEndpoint, form: requestParams }, (err, response, body) => {
     const parsedBody = JSON.parse(body)
 
     if (err) {

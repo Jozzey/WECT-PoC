@@ -14,8 +14,13 @@ if (updateRequired.checkData(file)) {
     // Get all of the data from the list.
     graph.getData(token)
       .then((data) => {
+        const trimmedData = []
+        data.forEach(element => {
+            // Extract just the field data from the 'data' array
+            trimmedData.push(element.fields)
+        })
         // Write the list data to a file
-        writeFile(file, JSON.stringify(data), (err) => {
+        writeFile(file, JSON.stringify(trimmedData), (err) => {
           if (err) throw err
           console.log('Data saved!')
         })

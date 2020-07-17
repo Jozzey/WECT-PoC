@@ -2,5 +2,9 @@ module.exports = [
   'Title',
   'wasteKey',
   'wasteName',
-  'Attachments'
+  'Attachments',
+  'wasteCategory',
+  'wasteSuffix',
+  'wasteNameSuffix',
+  'wasteCodeNameSuffix'
 ]
